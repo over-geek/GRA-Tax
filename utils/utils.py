@@ -26,3 +26,15 @@ def calculate_paye_tax(chargeable_income):
       tax += remaining_income * rate["Tax Rate"]
       break
   return tax
+
+def calculate_pensions(gross_salary):
+  tier = "Tier 2"
+  employee_contribution = gross_salary * pension_tiers[tier]["Employee Contribution"]
+  employer_contribution = gross_salary * pension_tiers[tier]["Employer Contribution"]
+  total_employee_contributions = employee_contribution + employer_contribution
+  return total_employee_contributions, employer_contribution, employee_contribution
+
+def calculate_taxable_income(gross_salary):
+  total_employee_contributions, employer_contribution, employee_contribution = calculate_pensions(gross_salary)
+  taxable_income = gross_salary - total_employee_contributions
+  return taxable_income, total_employee_contributions, employer_contribution, employee_contribution
