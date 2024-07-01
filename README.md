@@ -20,11 +20,6 @@
   - [Usage](#usage)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
-- [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
 
@@ -53,7 +48,7 @@
 
 ### Live Demo Link <a name="demo"></a>
 
-- [Live Link](https://decor-delight.netlify.app/)
+- N/A
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
