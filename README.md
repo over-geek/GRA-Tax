@@ -23,9 +23,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Rome Homepage <a name="about-project"></a>
+# 📖 GRA Tax <a name="about-project"></a>
 
-**Rome Homepage** is a REST API that takes net salary, and allowances as parameters, and returns the corresponding gross salary and additional details (Basic Salary, Total PAYE Tax, Employee Pension Contribution Amount and Employer Pension amount)
+**GRA Tax Api** is a REST API that takes net salary, and allowances as parameters, and returns the corresponding gross salary and additional details (Basic Salary, Total PAYE Tax, Employee Pension Contribution Amount and Employer Pension amount)
 
 ## 🛠 Built With <a name="built-with"></a>
 
