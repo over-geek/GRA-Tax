@@ -38,3 +38,25 @@ def calculate_taxable_income(gross_salary):
   total_employee_contributions, employer_contribution, employee_contribution = calculate_pensions(gross_salary)
   taxable_income = gross_salary - total_employee_contributions
   return taxable_income, total_employee_contributions, employer_contribution, employee_contribution
+
+def calculate_gross_salary(net_salary, allowances):
+  if not (isinstance(net_salary, (int, float)) and isinstance(allowances, (int, float))):
+    raise TypeError("Net salary and allowances must be numeric")
+
+  if net_salary < 0 or allowances < 0:
+    raise ValueError("Net Salary and Allowances must be non-negative")
+  
+  # Initial guess for gross_salary
+  gross_salary = net_salary + allowances
+
+  # Adjusting the gross_salary until the calculated net salary is close to the actual net salary
+  while True:
+    taxable_income, total_employee_contributions, employer_contribution, employee_contribution = calculate_taxable_income(gross_salary)
+    tax = calculate_paye_tax(taxable_income)
+    calculate_net_salary = gross_salary - tax - total_employee_contributions
+
+    if abs(calculate_net_salary - net_salary) < 0.01:
+      break
+    gross_salary += (net_salary - calculate_net_salary) / 2
+
+  return gross_salary, employee_contribution, employer_contribution, tax
